@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96" aria-hidden="true">
+  <defs>
+    <radialGradient id="sunGrad" cx="30%" cy="30%" r="60%">
+      <stop offset="0" stop-color="#FFF7CC"/>
+      <stop offset="0.5" stop-color="#FFD54A"/>
+      <stop offset="1" stop-color="#FF8C00"/>
+    </radialGradient>
+    <linearGradient id="cloudGrad" x1="0" x2="1">
+      <stop offset="0" stop-color="#F2F8FF"/>
+      <stop offset="1" stop-color="#D0E8FF"/>
+    </linearGradient>
+    <linearGradient id="dropGrad" x1="0" x2="1">
+      <stop offset="0" stop-color="#7FC3FF"/>
+      <stop offset="1" stop-color="#2B8CFF"/>
+    </linearGradient>
+    <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <!-- sun -->
+  <g transform="translate(26,26)">
+    <circle cx="0" cy="0" r="14" fill="url(#sunGrad)" filter="url(#softShadow)" />
+    <g stroke="#FFD54A" stroke-width="2.2" stroke-linecap="round">
+      <line x1="0" y1="-26" x2="0" y2="-36" />
+      <line x1="0" y1="26" x2="0" y2="36" />
+      <line x1="-26" y1="0" x2="-36" y2="0" />
+      <line x1="26" y1="0" x2="36" y2="0" />
+      <line x1="-18" y1="-18" x2="-26" y2="-26" />
+      <line x1="18" y1="-18" x2="26" y2="-26" />
+      <line x1="-18" y1="18" x2="-26" y2="26" />
+      <line x1="18" y1="18" x2="26" y2="26" />
+    </g>
+  </g>
+
+  <!-- cloud -->
+  <g transform="translate(42,44)">
+    <path d="M-24 8c0-6 5-11 11-11 2 0 3.8.5 5.4 1.5 1.4-3.3 5-5.6 9.6-5.6 6 0 11 4.9 11 11 0 1-.1 1.9-.4 2.7 3.6.8 6.3 3.8 6.3 7.6 0 4.3-3.5 7.8-7.8 7.8H-24c-4.3 0-7.8-3.5-7.8-7.8 0-3.6 2.5-6.7 5.9-7.4z"
+          fill="url(#cloudGrad)" stroke="#BFDFFF" stroke-width="0.8"/>
+  </g>
+
+  <!-- raindrop accent -->
+  <g transform="translate(60,58)">
+    <path d="M0 0c0 3.6-2.2 7.2-4.6 9.6-2.4-2.4-4.6-6-4.6-9.6 0-2.7 2.2-4.8 4.9-4.8S0  -2.7 0 0z" fill="url(#dropGrad)" opacity="0.95"/>
+  </g>
+</svg>

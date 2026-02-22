@@ -1,0 +1,162 @@
+
+:root{
+  --bg: #f4f7fb;
+  --card: #ffffff;
+  --accent: #2b7cff;
+  --accent-strong: #1f5fd8;
+  --accent-contrast: #ffb400;
+  --muted: #6b7280;
+}
+*{box-sizing:border-box}
+body{font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial,sans-serif;margin:0;color:#0f172a;background:var(--bg)}
+.container{max-width:900px;margin:28px auto;padding:18px}
+.app-header{display:flex;flex-direction:column;align-items:center;gap:10px;margin-bottom:18px}
+.app-header{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:10px;
+  margin-bottom:18px;
+  padding:18px;
+  border-radius:14px;
+  /* blue header background */
+  background: linear-gradient(90deg, #0f172a 0%, #0b61d6 40%, #2563eb 100%);
+  color: #ffffff;
+  box-shadow: 0 8px 30px rgba(3,7,18,0.35);
+}
+.app-header h1{margin:0;font-size:22px;display:flex;align-items:center;gap:14px}
+.site-logo{width:48px;height:48px;display:inline-block;vertical-align:middle;border-radius:8px}
+.site-title{font-weight:800;font-size:20px;letter-spacing:0.2px}
+.tagline{margin:6px 0 0 0;font-size:13px;opacity:0.95;color:rgba(255,255,255,0.9)}
+form{display:flex;gap:8px;max-width:640px;width:100%;justify-content:center}
+/* larger, centered search input */
+.app-header input{flex:1;padding:14px 16px;border:1px solid rgba(255,255,255,0.12);border-radius:10px;font-size:16px}
+.app-header .search-btn{
+  padding:10px 14px;
+  background: linear-gradient(90deg,#1e40af,#2563eb);
+  color:white;border:none;border-radius:10px;cursor:pointer;border:0;
+}
+.app-header .search-btn:active{transform:translateY(1px)}
+input{flex:1;padding:14px 16px;border:1px solid #e6e9ef;border-radius:10px;font-size:16px}
+button{padding:10px 14px;background:var(--accent);color:white;border:none;border-radius:10px;cursor:pointer}
+.swatch{width:28px;height:28px;border-radius:8px;border:2px solid rgba(15,23,42,0.06);cursor:pointer;padding:0}
+.swatch:focus{outline:2px solid rgba(0,0,0,0.12)}
+.swatch.pulse{animation:pulse 1.6s infinite}
+
+@keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.06)}100%{transform:scale(1)}}
+
+/* High-contrast mode */
+.high-contrast{--bg:#0b1220;--card:#071426;--accent:#ffd166;--accent-strong:#ffb400;--muted:#cbd5e1;color:#f8fafc}
+.high-contrast .card{box-shadow:0 8px 28px rgba(0,0,0,0.65)}
+.high-contrast button{color:#08090a}
+.card{background:var(--card);padding:14px;border-radius:12px;box-shadow:0 6px 18px rgba(15,23,42,0.06);margin-bottom:12px}
+.muted{color:var(--muted)}
+.row{display:flex;justify-content:space-between;align-items:center}
+.temp{font-size:36px;font-weight:700}
+
+.hourly{display:flex;gap:10px;overflow:auto;padding:8px 0}
+.hour{min-width:84px;padding:8px;background:transparent;border-radius:8px;text-align:center}
+.weather-icon{width:44px;height:44px;display:block;margin:6px auto;background:transparent;border-radius:0;padding:0;box-shadow:none}
+.hour-time{font-weight:600}
+.hour-temp{font-size:18px;margin-top:6px}
+.hour-desc{font-size:12px}
+
+.days{display:block}
+.next2{display:flex;gap:12px}
+.day{flex:1;padding:10px;background:transparent;border-radius:8px;text-align:left}
+.day-label{font-weight:600}
+.day-temps{margin-top:8px;font-weight:600}
+
+/* Weekly 7-day styles */
+.weekly{display:flex;gap:10px;flex-wrap:wrap}
+.card-small{flex:1 1 120px;padding:10px;border-radius:8px;background:rgba(255,255,255,0.98);box-shadow:0 6px 12px rgba(15,23,42,0.06);text-align:center}
+.week-date{font-weight:700}
+.week-weather{margin-top:6px}
+.week-temps{margin-top:8px}
+
+/* Section heading blue gradient bar */
+.card h2{
+  margin:0 0 10px 0;
+  padding:10px 12px;
+  border-radius:8px;
+  color:white;
+  background: linear-gradient(90deg,#0f172a 0%, #0b61d6 40%, #2563eb 100%);
+  box-shadow:0 6px 18px rgba(6,22,84,0.12);
+}
+
+@media (max-width:600px){
+  .container{padding:12px}
+  .temp{font-size:28px}
+  .hour{min-width:72px}
+}
+
+/* Dark mode overrides */
+body.dark{
+  background: linear-gradient(180deg,#0b1220 0%, #060812 60%);
+  color: #e6eefc;
+}
+body.dark .card{
+  background: rgba(18,24,34,0.78);
+  box-shadow: 0 8px 24px rgba(2,6,23,0.6);
+}
+body.dark .muted{ color: #9aa9bf }
+/* No colored backdrop for icons in dark mode either */
+body.dark .weather-icon{
+  background: transparent;
+  box-shadow: none;
+}
+
+/* Weather backgrounds and simple animations */
+.bg-sunny{background: linear-gradient(180deg,#fff8e6 0%, #f4f7fb 60%)}
+.bg-clouds{background: linear-gradient(180deg,#eef2f7 0%, #e9eef6 60%)}
+.bg-rain{background: linear-gradient(180deg,#e6f0fb 0%, #dfe9f6 60%)}
+.bg-snow{background: linear-gradient(180deg,#f7fbff 0%, #f0f6fa 60%)}
+
+/* raindrop overlay */
+.bg-rain::after{
+  content: '';
+  position: fixed;left:0;right:0;top:0;bottom:0;pointer-events:none;
+  background-image: radial-gradient(circle at 10% 20%, rgba(255,255,255,0.02) 0, transparent 20%), radial-gradient(circle at 80% 40%, rgba(255,255,255,0.02) 0, transparent 20%);
+  mix-blend-mode: overlay;
+}
+
+/* clouds subtle moving layer */
+.bg-clouds::after{
+  content:'';position:fixed;left:-20%;right:-20%;top:0;height:200px;pointer-events:none;opacity:0.06;background:radial-gradient(closest-side, #000 10%, transparent 60%);transform:translateX(0);animation:clouds 18s linear infinite}
+@keyframes clouds{ from{transform:translateX(-10%)} to{transform:translateX(10%)} }
+
+
+.theme-toggle{background:transparent;border:1px solid rgba(15,23,42,0.06);padding:8px;border-radius:8px;cursor:pointer}
+body.dark .theme-toggle{border-color:rgba(255,255,255,0.12)}
+
+/* Map container */
+#map {
+  width: 100%;
+  height: 300px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #f0f0f0;
+}
+
+body.dark #map {
+  background: #1a1f2e;
+}
+
+/* Temperature legend */
+.temp-legend{padding:10px;min-width:160px}
+.temp-legend .temp-legend-bar{height:12px;border-radius:6px;border:1px solid rgba(0,0,0,0.08)}
+body.dark .temp-legend{background:rgba(18,24,34,0.8);color:#e6eefc}
+
+/* accent-focused interactive styles */
+.site-logo{transition:transform .18s ease}
+.site-logo:hover{transform:rotate(-6deg) scale(1.02)}
+.theme-toggle{transition:box-shadow .12s ease, transform .12s ease}
+.theme-toggle:active{transform:translateY(1px)}
+.theme-toggle.pulse{box-shadow:0 6px 18px rgba(0,0,0,0.12), 0 0 0 8px rgba(43,124,255,0.06)}
+
+/* make controls in header stand out on top of blue background */
+.app-header .theme-toggle, .app-header .swatch, .app-header button{box-shadow:0 6px 16px rgba(2,6,23,0.18)}
+.app-header input{background:rgba(255,255,255,0.95);border-radius:10px}
+.app-header button{background:var(--accent);color:white}
+.high-contrast .app-header{background:#012252;color:#fff}
+
