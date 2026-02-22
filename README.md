@@ -1,12 +1,27 @@
-# Weather Forecast (Simple Fullstack App)
+Weather App — Full Stack Forecast Application
 
-Minimal Node + Express app that proxies OpenWeatherMap and serves a small frontend.
+A clean, lightweight full-stack weather application built with **Node.js + Express** that fetches real-time weather data and displays it in a simple, user-friendly interface.
 
-Prerequisites
-- Node.js 18+ (or a Node that supports `https.get` as used here)
+ Features
 
-Install and run
-```bash
-cd /workspace/weather-app
-npm install
-npm start
+- Get real-time weather by city
+- Fast API response
+- Secure API key management with environment variables
+- Lightweight backend (Express server)
+- Modular code structure
+- Beginner-friendly architecture
+- Ready for deployment
+
+---
+
+ Tech Stack
+
+Backend
+- Node.js
+- Express
+
+Environment & Tools**
+- dotenv
+- REST APIs
+- npm
+
