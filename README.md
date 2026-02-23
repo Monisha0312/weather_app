@@ -20,7 +20,7 @@ Backend
 - Node.js
 - Express
 
-Environment & Tools**
+Environment & Tools
 - dotenv
 - REST APIs
 - npm
